@@ -24,3 +24,17 @@ php bin/magento cache:clean
 php bin/magento cache:flush
 
 ============================================================================================================
+
+1.5.1 — Change to develop mode using the .htaccess and throw an exception as a text (the exception should
+be displayed)
+
+============================================================================================================
+
+1.5.2 — Cache: Under what circumstances will cleaning the var/cachefolder not work?
+
+Answer: When cache storage is different (separate) from the var/cachefolder. For example, it could be memory
+caching like Redis or Memcached. Also, if you are using Varnish, it will be necessary to restart the service:
+
+sudo service varnish restart
+
+
